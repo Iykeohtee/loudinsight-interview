@@ -1,7 +1,8 @@
 import { Users, User, Monitor, ArrowUp, ArrowDown } from "lucide-react";
 
 interface StatsCardsProps {
-  totalCustomers: number; // real — passed down from the API total in layout.tsx
+  totalCustomers: number;
+  loadFailed?: boolean;
 }
 
 // Members / Active Now have no backing field in the DummyJSON API — there's no
@@ -19,17 +20,19 @@ function formatTotal(n: number) {
   return n.toLocaleString("en-US");
 }
 
-export function StatsCards({ totalCustomers }: StatsCardsProps) {
+export function StatsCards({ totalCustomers, loadFailed }: StatsCardsProps) {
   return (
     <div className="grid grid-cols-3 gap-4 mb-6">
-      {/* Total Customers — real data */}
+      {/* Total Customers  */}
       <div className="bg-white rounded-2xl p-5 flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
           <Users size={22} className="text-green-600" />
         </div>
         <div>
           <p className="text-sm text-gray-400">Total Customers</p>
-          <p className="text-xl font-semibold">{formatTotal(totalCustomers)}</p>
+          <p className="text-xl font-semibold">
+            {loadFailed ? "—" : formatTotal(totalCustomers)}
+          </p>
           <p className="text-xs text-green-600 flex items-center gap-1 mt-1">
             <ArrowUp size={12} /> 16% this month
           </p>
