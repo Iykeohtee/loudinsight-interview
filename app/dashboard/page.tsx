@@ -4,6 +4,7 @@ import { SearchInput } from "../components/dashboard/SearchInput";
 import { Pagination } from "../components/dashboard/Pagination";
 import { SortControl } from "../components/dashboard/SortControl";
 
+// this means the URL receives query params like ?q=search&page=1&sortBy=id&order=asc
 interface DashboardPageProps {
   searchParams: Promise<{
     q?: string;
