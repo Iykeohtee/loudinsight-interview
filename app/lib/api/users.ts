@@ -1,8 +1,9 @@
 import { GetUsersParams, UsersResponse } from "../types/user";
 
-const FIELDS = 'firstName,lastName,email,phone,address';
+const FIELDS = 'firstName,lastName,gender,email,phone,address';
 
 export async function getUsers({ q, limit, skip, sortBy, order }: GetUsersParams): Promise<UsersResponse> {
+
   const base = q
     ? `https://dummyjson.com/users/search?q=${encodeURIComponent(q)}`
     : `https://dummyjson.com/users`;

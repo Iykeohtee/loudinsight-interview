@@ -28,7 +28,7 @@ export function Sidebar() {
     <aside className="w-64 min-h-screen bg-white border-r flex flex-col justify-between">
       <div>
         <div className="px-6 py-6">
-          <span className="text-lg font-bold">Dashboard</span>
+          <span className="text-lg font-bold text-black/60">Dashboard</span>
         </div>
 
         <nav className="px-3 space-y-1">

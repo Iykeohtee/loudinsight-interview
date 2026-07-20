@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 export function Topbar() {
   return (
     <header className="flex items-center justify-between px-8 py-6">
-      <h1 className="text-xl font-semibold">Hello Evano 👋</h1>
+      <h1 className="text-xl font-semibold text-black/50">Hello Evano 👋</h1>
 
       {/* Decorative only — not wired to any search logic.
           The functional search lives in SearchInput.tsx inside the customers card. */}

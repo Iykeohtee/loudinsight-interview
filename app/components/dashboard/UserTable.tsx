@@ -29,10 +29,11 @@ export function UserTable({ users }: { users: User[] }) {
         {users.map((user) => {
           const status = getUserStatus(user.id);
           return (
-            <tr key={user.id} className="border-b last:border-0">
+            <tr key={user.id} className="border-b last:border-0 text-black">
               <td className="py-4">
                 {user.firstName} {user.lastName}
               </td>
+              <td>{user.gender}</td>
               <td>{user.phone}</td>
               <td>{user.email}</td>
               <td>{user.address.country}</td>

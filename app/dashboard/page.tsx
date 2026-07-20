@@ -2,6 +2,7 @@ import { getUsers } from "../lib/api/users";
 import { UserTable } from "../components/dashboard/UserTable";
 import { SearchInput } from "../components/dashboard/SearchInput";
 import { Pagination } from "../components/dashboard/Pagination";
+import { SortControl } from "../components/dashboard/SortControl";
 
 interface DashboardPageProps {
   searchParams: Promise<{
@@ -33,10 +34,13 @@ export default async function DashboardPage({
     <div className="bg-white rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-lg font-semibold">All Customers</h2>
-          <span className="text-xs text-indigo-600">Active Members</span>
+          <h2 className="text-lg font-semibold text-black/40">All Customers</h2>
+          <span className="text-xs text-green-600">Active Members</span>
         </div>
-        <SearchInput />
+        <div className="flex items-center gap-4">
+          <SearchInput />
+          <SortControl />
+        </div>
       </div>
 
       <UserTable users={data.users} />
