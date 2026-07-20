@@ -42,7 +42,7 @@ export function SearchInput() {
         placeholder="Search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="outline-none flex-1 text-sm placeholder:text-black/50"
+        className="outline-none flex-1 text-black text-sm placeholder:text-black/50"
       />
       {isPending && <span className="text-xs text-gray-400">···</span>}
     </div>
